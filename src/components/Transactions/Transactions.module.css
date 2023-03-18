@@ -1,0 +1,29 @@
+.transaction-history {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 36px;
+  background: #f0f0f0;
+  box-shadow: 10px 10px 17px #949494, -10px -10px 17px #ffffff;
+  padding: 20px;
+}
+
+.tr-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+thead {
+  margin-bottom: 30px;
+}
+.tr-item {
+  display: flex;
+  justify-content: space-between;
+}
+.tr-item > td {
+  width: 70px;
+}
+.tr-item > td:not(:last-child) {
+  width: 70px;
+  margin-bottom: 15px;
+}
