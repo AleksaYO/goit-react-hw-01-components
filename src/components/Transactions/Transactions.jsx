@@ -18,11 +18,7 @@ export function Transactions(transactions) {
   );
 }
 
-function TransactionsItem(props) {
-  const {
-    array: { transactions },
-  } = props;
-
+function TransactionsItem({ array: { transactions } }) {
   return transactions.map(({ id, type, amount, currency }) => {
     return (
       <tr className={css['tr-item']} key={id}>
@@ -35,6 +31,12 @@ function TransactionsItem(props) {
 }
 
 Transactions.propTypes = {
-  transactions: PropTypes.array.isRequired,
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
-/////фффффффф

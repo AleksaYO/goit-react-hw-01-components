@@ -1,11 +1,10 @@
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
-import cssStat from '../components/Statistics/statistics.module.css';
-import user from '../components/data/user.json';
-import dataStat from './data/data.json';
-import transactions from './data/transactions.json';
+import user from '../data/user.json';
+import dataStat from '../data/data.json';
+import transactions from '../data/transactions.json';
 import { Transactions } from './Transactions/Transactions';
-
+import friends from '../data/friends.json';
 import { FriendsList } from '../components/FriendList/FriendList';
 
 export const App = () => {
@@ -19,18 +18,10 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <div className="friends-box">
-        <h1>Друзья</h1>
-        <FriendsList />
-      </div>
+      <h1>Друзья</h1>
+      <FriendsList friends={friends} />
       <h1>Статистика</h1>
-      <section className={cssStat.statistics}>
-        <h2 className={cssStat.title}>Upload stats</h2>
-
-        <ul className={cssStat['stat-list']}>
-          <Statistics stats={dataStat} />
-        </ul>
-      </section>
+      <Statistics title="Upload stats" stats={dataStat} />
       <h1>Транзакции</h1>
       <section>
         <Transactions transactions={transactions} />
